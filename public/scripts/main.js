@@ -1,5 +1,3 @@
-// public/scripts/main.js
-
 document.getElementById("raposa").addEventListener("click", async () => {
   await fetchData("/raposa");
 });
@@ -17,6 +15,7 @@ async function fetchData(endpoint) {
     const response = await fetch(endpoint);
     const data = await response.json();
     document.getElementById("imagemAnimal").src = data.imagem;
+    document.getElementById("imagemAnimal").style.display = "block";
   } catch (error) {
     alert("Erro ao buscar informações.");
   }
