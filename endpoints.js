@@ -4,8 +4,8 @@ module.exports = function (app) {
   app.get("/raposa", async (req, res) => {
     try {
       const response = await axios.get("https://randomfox.ca/floof/");
-      const { message, link } = response.data;
-      res.json({ mensagem: "Você solicitou por uma raposa", imagem: link });
+      const { image, link } = response.data;
+      res.json({ mensagem: "Você solicitou por uma raposa", imagem: image });
     } catch (error) {
       res.status(500).json({ error: "Erro ao buscar informações da raposa" });
     }
